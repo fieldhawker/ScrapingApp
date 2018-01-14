@@ -67,8 +67,10 @@ def main():
             # html = urllib.request.urlopen(url).read()
             try:
                 response = urllib.request.urlopen(url)
-            except HTTPError as e:
+            except urllib.error.HTTPError as e:
                 logger.info(e.reason)
+                url = url + ' : ' + str(e.code)
+                output_file_line('リクエストがエラーを返しました。', url, 'HTTPError')
                 continue
 
             logger.info(response.getcode())
@@ -79,6 +81,7 @@ def main():
                 logger.info(response.geturl())
                 logger.info(response.getcode())
             html = response.read()
+            url = url + ' : ' + str(response.getcode())
 
             soup = BeautifulSoup(html, "lxml")
 
@@ -92,6 +95,7 @@ def main():
                 logger.info("--- " + keyword + " start --------------- ")
 
                 if len(tags) <= 0:
+                    output_file_line('対象が見つかりませんでした。', url, keyword)
                     logger.info("--- " + keyword + " end. 対象のタグが見つかりませんでした。   --------------- ")
                     continue
 
@@ -112,6 +116,7 @@ def main():
                 logger.info("--- " + keyword + " start --------------- ")
 
                 if len(tags) <= 0:
+                    output_file_line('対象が見つかりませんでした。', url, keyword)
                     logger.info("--- " + keyword + " end. 対象のタグが見つかりませんでした。   --------------- ")
                     continue
 
@@ -134,6 +139,7 @@ def main():
                 logger.info("--- " + keyword + " start --------------- ")
 
                 if len(tags) <= 0:
+                    output_file_line('対象が見つかりませんでした。', url, keyword)
                     logger.info("--- " + keyword + " end. 対象のタグが見つかりませんでした。   --------------- ")
                     continue
 
@@ -159,6 +165,7 @@ def main():
                 logger.info("--- " + keyword + " start --------------- ")
 
                 if len(tags) <= 0:
+                    output_file_line('対象が見つかりませんでした。', url, keyword)
                     logger.info("--- " + keyword + " end. 対象のタグが見つかりませんでした。   --------------- ")
                     continue
 
@@ -176,27 +183,25 @@ def main():
 
 
 def get_wordlist_from_tags(tags):
-    global dictionary
-    global export_file_name
-
     for target in tags:
-        # logger.debug(target)
         word_list = list(filter(lambda s: s != '', target.get_text().split('\n')))
-        # logger.info(word_list)
-
         return word_list
 
 
 def export_message_from_list(list, url, id):
+    for word in list:
+        output_file_line(word, url, id)
+
+
+def output_file_line(word, url, id):
     global dictionary
     global export_file_name
 
-    for word in list:
-        word = word.encode('cp932', "ignore").decode('cp932').strip()
-        logger.info(dictionary['export_format'].format(url=url, id=id, word=word))
-        f = open('./logs/' + export_file_name, 'a')
-        f.write(dictionary['export_format'].format(url=url, id=id, word=word) + '\n')
-        f.close()
+    word = word.encode('cp932', "ignore").decode('cp932').strip()
+    logger.info(dictionary['export_format'].format(url=url, id=id, word=word))
+    f = open('./logs/' + export_file_name, 'a')
+    f.write(dictionary['export_format'].format(url=url, id=id, word=word) + '\n')
+    f.close()
 
 
 if __name__ == '__main__':

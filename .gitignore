@@ -1,1 +1,13 @@
 .idea
+build/ScrapingApp/base_library.zip
+build/ScrapingApp/ScrapingApp.exe.manifest
+__pycache__/ScrapingApp.cpython-36.pyc
+ScrapingApp.spec
+build/ScrapingApp/xref-ScrapingApp.html
+build/ScrapingApp/warnScrapingApp.txt
+build/ScrapingApp/out00-PYZ.toc
+build/ScrapingApp/out00-PYZ.pyz
+build/ScrapingApp/out00-PKG.toc
+build/ScrapingApp/out00-PKG.pkg
+build/ScrapingApp/out00-EXE.toc
+build/ScrapingApp/out00-Analysis.toc

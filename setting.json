@@ -5,7 +5,10 @@
     "https://se-project.co.jp/corp/software/",
     "http://www.aflo.com/s/Search/search",
     "http://www.aflo.com/sys/static/cat.asp?c=200761",
-    "https://se-project.co.jp/corp/about_us/"
+    "https://se-project.co.jp/corp/about_us/",
+    "http://ozuma.sakura.ne.jp/httpstatus/500",
+    "http://ozuma.sakura.ne.jp/httpstatus/404",
+    "http://ozuma.sakura.ne.jp/httpstatus/301"
   ],
   "ids": [
     "fontSize",
