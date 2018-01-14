@@ -1,0 +1,61 @@
+{
+  "urls": [
+    "http://google.com",
+    "aaaaaaaaaaaaaaaaa",
+    "https://se-project.co.jp/corp/software/",
+    "http://www.aflo.com/s/Search/search",
+    "http://www.aflo.com/sys/static/cat.asp?c=200761",
+    "https://se-project.co.jp/corp/about_us/"
+  ],
+  "ids": [
+    "fontSize",
+    "num_hits"
+  ],
+  "classes": [
+    "clearfix",
+    "profile"
+  ],
+  "attrs": [
+    {
+      "id": "header_cont",
+      "class": "clearfix"
+    },
+    {
+      "id": "header_cont",
+      "class": "header_cont"
+    }
+  ],
+  "tags": [
+    {
+      "tag": "div",
+      "attr": {
+        "id": "header_cont",
+        "class": "clearfix"
+      }
+    },
+    {
+      "tag": "span",
+      "attr": {
+        "id": "header_cont",
+        "class": "clearfix"
+      }
+    }
+  ],
+  "export_format": "{url} - {id} - {word}",
+  "export_format_comment": [
+    "{url} - {id} - {word}",
+    "{word} - {id} - {url}",
+    "{word}",
+    "{id} - {word}"
+  ],
+  "book1": {
+    "title": "Python Developers",
+    "year": 2006,
+    "page": 650
+  },
+  "book2": {
+    "title": "Python Developers",
+    "year": 2006,
+    "page": 650
+  }
+}
