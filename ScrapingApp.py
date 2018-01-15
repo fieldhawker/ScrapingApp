@@ -1,5 +1,6 @@
 # coding: UTF-8
 import os
+import time
 import json
 import logging
 import datetime
@@ -20,6 +21,7 @@ logger = logging.getLogger(__name__)
 def main():
     global dictionary
     global export_file_name
+    global target_word
 
     # --------------------------
     # jsonファイルの存在チェック
@@ -46,6 +48,14 @@ def main():
         logger.error("jsonファイルにexport_formatが見つかりません。")
         exit()
 
+    sleep_time = 10
+    if "sleep_second" in dictionary:
+        sleep_time = dictionary['sleep_second']
+
+    target_word = ""
+    # if "target_word" in dictionary:
+    #     target_word = dictionary['target_word'].decode("utf-8")
+
     logger.debug("ScrapingApp --- start ---")
 
     # --------------------------
@@ -70,7 +80,7 @@ def main():
             except urllib.error.HTTPError as e:
                 logger.info(e.reason)
                 url = url + ' : ' + str(e.code)
-                output_file_line('リクエストがエラーを返しました。', url, 'HTTPError')
+                output_file_line('0点 リクエストがエラーを返しました。', url, 'HTTPError')
                 continue
 
             logger.info(response.getcode())
@@ -95,7 +105,7 @@ def main():
                 logger.info("--- " + keyword + " start --------------- ")
 
                 if len(tags) <= 0:
-                    output_file_line('対象が見つかりませんでした。', url, keyword)
+                    output_file_line('0点 対象が見つかりませんでした。', url, keyword)
                     logger.info("--- " + keyword + " end. 対象のタグが見つかりませんでした。   --------------- ")
                     continue
 
@@ -116,7 +126,7 @@ def main():
                 logger.info("--- " + keyword + " start --------------- ")
 
                 if len(tags) <= 0:
-                    output_file_line('対象が見つかりませんでした。', url, keyword)
+                    output_file_line('0点 対象が見つかりませんでした。', url, keyword)
                     logger.info("--- " + keyword + " end. 対象のタグが見つかりませんでした。   --------------- ")
                     continue
 
@@ -139,7 +149,7 @@ def main():
                 logger.info("--- " + keyword + " start --------------- ")
 
                 if len(tags) <= 0:
-                    output_file_line('対象が見つかりませんでした。', url, keyword)
+                    output_file_line('0点 対象が見つかりませんでした。', url, keyword)
                     logger.info("--- " + keyword + " end. 対象のタグが見つかりませんでした。   --------------- ")
                     continue
 
@@ -165,7 +175,7 @@ def main():
                 logger.info("--- " + keyword + " start --------------- ")
 
                 if len(tags) <= 0:
-                    output_file_line('対象が見つかりませんでした。', url, keyword)
+                    output_file_line('0点 対象が見つかりませんでした。', url, keyword)
                     logger.info("--- " + keyword + " end. 対象のタグが見つかりませんでした。   --------------- ")
                     continue
 
@@ -179,17 +189,26 @@ def main():
         else:
             logger.info(url + "はURLではありません。")
 
-    logger.debug("ScrapingApp --- end ---")
+        # Dos攻撃にならないように
+        time.sleep(sleep_time)
+
+    logger.info("ScrapingApp --- end ---")
 
 
 def get_wordlist_from_tags(tags):
     for target in tags:
+        # word_list = list(filter(lambda s: s != '', target.get_text().split('\n')))
         word_list = list(filter(lambda s: s != '', target.get_text().split('\n')))
-        return word_list
+    return word_list
 
 
 def export_message_from_list(list, url, id):
+    global target_word
+
     for word in list:
+        if len(target_word) > 0 and word.find(target_word) == -1:
+            continue
+
         output_file_line(word, url, id)
 
 
