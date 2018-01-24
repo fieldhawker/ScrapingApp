@@ -1,0 +1,717 @@
+    1  sudo useradd deploy
+    2  cd
+    3  sudo useradd deploy
+    4  sudo mkdir /home/deploy/.ssh
+    5  pwd
+    6  ll /home/aflonet/
+    7  mv /home/aflonet/authorized_keys /home/deploy/.ssh/
+    8  sudo mv /home/aflonet/authorized_keys /home/deploy/.ssh/
+    9  ll /home/deploy/
+   10  sudo ll /home/deploy/
+   11  sudo chmod 600 /home/deploy/.ssh/authorized_keys
+   12  sudo chmod 700 /home/deploy/.ssh
+   13  sudo chown -R deploy:deploy /home/deploy/.ssh
+   14  sudo visudo
+   15  rm /etc/sysconfig/network-scripts/ifcfg-ens160 
+   16  exit
+   17  su -
+   18  sudo su
+   19  ip a
+   20  passwd
+   21  exit
+   22  cd /etc/httpd/conf.d/
+   23  cd ..
+   24  vi sites-enabled/ecpro.conf 
+   25  cd /home/Colombo
+   26  ls
+   27  ll
+   28  mkdir current
+   29  ll /home/
+   30  chown -R aflonet:aflonet /home/Colombo
+   31  sudo chown -R aflonet:aflonet /home/Colombo
+   32  exit
+   33  mkdir current
+   34  ll
+   35  exit
+   36  ll
+   37  dir
+   38  pwd
+   39  ll
+   40  ssh-keygen
+   41  ll
+   42  less .ssh/id_rsa.pub
+   43  vi /etc/hosts
+   44  sudo vi /etc/hosts
+   45  CD
+   46  cd
+   47  less .ssh/id_rsa.pub
+   48  $ cd /home/Colombo/current/apps
+   49  d /home/Colombo/current/apps
+   50  cd /home/Colombo/current/apps
+   51  ll
+   52  cd /home/Colombo
+   53  ll
+   54  cd current/
+   55  ll
+   56  mkdir apps
+   57  mkdir lib
+   58  cd apps/
+   59  git clone -b "feature/takano_work" git@gitlab.aflo.com:EC/ECModel
+   60  dir
+   61  mkdir Sample
+   62  cd /home/
+   63  ll
+   64  sudo chown -R aflonet:aflonet Colombo
+   65  cd Colombo/current/
+   66  ll
+   67  cd apps/
+   68  ll
+   69  rmdir Sample/
+   70  ll
+   71  git clone -b "develop" git@gitlab.aflo.com:EC/ECModel
+   72  ll
+   73  git clone -b "develop" git@gitlab.aflo.com:EC/Pro ECPro
+   74  ll
+   75  git clone -b "development" git@gitlab.aflo.com:DAM/DamModel.git
+   76  ll
+   77  git clone -b "development" git@gitlab.aflo.com:DAM/DamDao.git
+   78  cd /home/Colombo/current/lib
+   79  git clone -b "develop" git@gitlab.aflo.com:Lib/Alpha.git lib
+   80  firewall-cmd --get-services
+   81  ll
+   82  cd ../apps/
+   83  ll
+   84  cd ECPro/
+   85  ll
+   86  cd Con
+   87  cd Config/
+   88  ll
+   89  pwd
+   90  cd Env/
+   91  ll
+   92  less Development 
+   93  mv Development Staging
+   94  ll
+   95  cd ../
+   96  ll
+   97  cp -p database.php database.php.bak 
+   98  cp -p StagingDatabase.php database.php
+   99  ll
+  100  vi StagingConfig.php 
+  101  cd ../../
+  102  cd ../lib/
+  103  ll
+  104  cd lib/
+  105  ll
+  106  cd ../
+  107  ll
+  108  cd ../
+  109  ;;
+  110  ll
+  111  cd apps/ECPro/
+  112  ll
+  113  cd Con
+  114  cd Config/
+  115  ll
+  116  vi StagingConfig.php 
+  117  cd 
+  118  ll
+  119  firewall-cmd --permanent --zone=public --add-service=http
+  120  firewall-cmd --reload
+  121  sudo firewall-cmd --permanent --zone=public --add-service=http
+  122  sudo firewall-cmd --reload
+  123  view /etc/httpd/conf.d/virtualhost.conf
+  124  cd /etc/httpd/conf.d/
+  125  ll
+  126  vi virtualhost.conf
+  127  ll /home/Colombo/current/apps/ECPro/
+  128  vi /etc/httpd/conf.d/virtualhost.conf
+  129  sudo vi /etc/httpd/conf.d/virtualhost.conf
+  130  ll
+  131  vi /etc/selinux/config
+  132  sudo vi /etc/selinux/config
+  133  cd /home/Colombo/current/lib
+  134  ll
+  135  cd lib/
+  136  ll
+  137  pwd
+  138  less /var/log/
+  139  cd /var/log/
+  140  ll
+  141  less messages
+  142  sudo less messages
+  143  cd httpd/
+  144  sudo cd httpd/
+  145  sudo ll httpd/
+  146  sudo less -al httpd/
+  147  sudo less -a httpd/
+  148  sudo ls -al httpd/
+  149  sudo less httpd/account-dev.aflo.com.error_log
+  150  pwd
+  151  cd /home/Colombo/current/lib/lib/Cake2.6/
+  152  cd /home/
+  153  ll
+  154  cd Colombo
+  155  ll
+  156  cd current/
+  157  ll
+  158  cd apps/
+  159  ll
+  160  cd ECPro/
+  161  ll
+  162  cd Config/
+  163  ll
+  164  less DevelopmentConfig.php 
+  165  pwd
+  166  ll
+  167  cd ../
+  168  ll
+  169  pwd
+  170  cd webroot/
+  171  pwd
+  172  cd
+  173  ll
+  174  cd /home/Colombo
+  175  ll
+  176  cd current/
+  177  ll
+  178  cd /home/
+  179  ll
+  180  exit
+  181  cd /home/Colombo/current/apps/Conf
+  182  cd /home/Colombo/current/apps/ECPro/Config/
+  183  ll
+  184  less StagingConfig
+  185  less StagingConfig.php
+  186  grep -R "ecpro-stg.aflo.com" ./
+  187  grep -R ".aflo.com" ./
+  188  grep -R "-stg.aflo.com" ./
+  189  grep -R "o-stg.aflo.com" ./
+  190  grep -R "service_system_info" ./
+  191  ll
+  192  cd Env/
+  193  ll
+  194  mv Staging Development
+  195  ll
+  196  cd ../
+  197  ll
+  198  vi DevelopmentConfig.php 
+  199  cd ./../
+  200  ll
+  201  cd ../
+  202  ll
+  203  cd ../
+  204  ll
+  205  cd lib/
+  206  ll
+  207  cd lib/
+  208  ll
+  209  pwd
+  210  ll
+  211  cd ../
+  212  ll
+  213  pwd
+  214  ll
+  215  rm -rf lib/
+  216  ll
+  217  cd /home/Colombo/current/lib
+  218  ll
+  219  git clone -b "develop" git@gitlab.aflo.com:Lib/Alpha.git
+  220  ll
+  221  cd Alpha/
+  222  ll
+  223  cd ../
+  224  rm -rf Alpha/
+  225  ll
+  226  cd ../
+  227  git clone -b "develop" git@gitlab.aflo.com:Lib/Alpha.git lib 
+  228  ll
+  229  cd lib/
+  230  ll
+  231  less /etc/httpd/conf.d/virtualhost.conf
+  232  less /var/logs/colombo.error_log
+  233  cd /etc/httpd/logs/
+  234  sudo
+  235  sudo ls -al /etc/httpd/logs/
+  236  su
+  237  sudo less /etc/httpd/logs/colombo.error.log
+  238  sudo less /etc/httpd/logs/colombo.error_log
+  239  cd ./
+  240  ll
+  241  cd ../
+  242  lll
+  243  ll
+  244  cd ../
+  245  ll
+  246  pwd
+  247  chown -R aflonet:aflonet /home/Colombo
+  248  ll
+  249  cd current/apps/ECPro/
+  250  ll
+  251  chmod -R 777 tmp/
+  252  ll
+  253  cd /etc/httpd/
+  254  ll
+  255  cd conf
+  256  ll
+  257  cd /etc/
+  258  cp -p php.ini php.ini.bak
+  259  sudo cp -p php.ini php.ini.bak
+  260  ll Php*
+  261  ll Php.ini*
+  262  ll Php.ini
+  263  ll php.ini*
+  264  sudo vi php.ini
+  265  php -i | grep xdebug
+  266  grep -R "xdebug" ./
+  267  sudo grep -R "xdebug" ./
+  268  sudo grep -R "xdebug.so" ./
+  269  pear list
+  270  pwd
+  271  ll
+  272  cd /usr/
+  273  ll
+  274  cd lib
+  275  ll
+  276  sudo grep -R "xdebug.so" ./
+  277  cd ../
+  278  ll
+  279  sudo grep -R "xdebug.so" ./
+  280   php -i | grep 'Debug Build'
+  281  sudo vi /etc/php.ini
+  282  ll
+  283  cd /etc/
+  284  lll
+  285  cd /usr/
+  286  ll
+  287  ll share/
+  288  ll share/php/
+  289  ll
+  290  cd etc/
+  291  ll
+  292  cd li
+  293  d ../lib
+  294  ll
+  295  cd ../lib
+  296  ll
+  297  ll debug/
+  298  ll debug/usr/
+  299  ll
+  300  cd /home/Colombo/current/lib/
+  301  ll
+  302  cd 
+  303  cd /home/Colombo/current/
+  304  ll
+  305  grep -R "xdebug.so" ./
+  306  grep -R "*xdebug*" ./
+  307  cd ./lib/Common/
+  308  ll
+  309  less composer.json 
+  310  less composer.lock 
+  311  ll
+  312  pwd
+  313  ll
+  314  grep -R "*xdebug*" ./
+  315  php -v
+  316  ll
+  317  exit
+  318  cd /home/Colombo_p2/current/apps/DamModel/
+  319  ls -l
+  320  git status
+  321  git branch
+  322  cd ..
+  323  ls -l
+  324  mv DamDao DamDao_old
+  325  git clone git@gitlab.aflo.com:DAM_p2/DamDao.git -b development
+  326  ls -l
+  327  mv DamModel DamModel_old
+  328  git clone git@gitlab.aflo.com:DAM_p2/DamModel.git -b development
+  329  ls -l
+  330  cd ECPro/
+  331  ls -l
+  332  cd Console/
+  333  ls -l
+  334  cd ..
+  335  cd Config
+  336  ls -l
+  337  vi DevelopmentConfig.php 
+  338  cd ..
+  339  ls -l
+  340  cd ..
+  341  ls -l
+  342  mv ECPro ECPro_old
+  343  git clone git@gitlab.aflo.com:EC/Pro.git -b develop
+  344  mv ECModel ECModel_old
+  345  git clone git@gitlab.aflo.com:EC/ECModel.git -b develop
+  346  ls -l
+  347  cd ECPro_old/
+  348  cd ..
+  349  ls -l
+  350  mv Pro ECPro
+  351  ls -l
+  352  cd ECPro
+  353  ls -l
+  354  cd tmp
+  355  ls -l
+  356  cd ..
+  357  chmod -R 777 tmp
+  358  ls -l
+  359  cd Config
+  360  ls -l
+  361  vi database.php 
+  362  pwd
+  363  vi database.php 
+  364  ls -l
+  365  cd ..
+  366  ls -l
+  367  git clone git@gitlab.aflo.com:EC/Account.git -b develop
+  368  cd Account/
+  369  ls -l
+  370  cd Config
+  371  ls -l
+  372  cd ..
+  373  ls -l
+  374  cd tmp
+  375  ls -l
+  376  cd ..
+  377  chmod -R 777 tmp
+  378  ls -l
+  379  cd Config
+  380  ls -l
+  381  vi database.php 
+  382  vi DevelopmentConfig.php 
+  383  vi database.php 
+  384  vi DevelopmentConfig.php 
+  385  cd ..
+  386  cd ECPro
+  387  ls -l
+  388  cd Config
+  389  ls -l
+  390  vi Development
+  391  vi DevelopmentConfig.php 
+  392  exit
+  393  cd /home/Colombo_p2/
+  394  ls -l
+  395  cd current/
+  396  ls -l
+  397  cd apps/
+  398  ls -l
+  399  cd /etc/httpd/
+  400  ls -l
+  401  cd conf.d
+  402  ls -l
+  403  vi virtualhost.conf 
+  404  sudo bash
+  405  exit
+  406  cd /etc/httpd/conf.d/
+  407  ll
+  408  cp -p virtualhost.conf virtualhost.conf.ichikawa_modify
+  409  sudo cp -p virtualhost.conf virtualhost.conf.ichikawa_modify
+  410  ll
+  411  cd /home/Colombo_p2/current/apps/
+  412  ll
+  413  cp -p drwxrwxr-x 19 aflonet aflonet  4096  1月 11 20:10 Account
+  414  cp -p Account Account_ichikawa
+  415  cp -rp Account Account_ichikawa
+  416  ll
+  417  cp -rp DamDao DamDao_ichikawa
+  418  cp -rp DamModel DamModel_ichikawa
+  419  cp -rp ECModel ECModel_ichikawa
+  420  cp -rp ECPro ECPro_ichikawa
+  421  ll
+  422  dk
+  423  df
+  424  df -h
+  425  cd /home/Colombo
+  426  ll
+  427  cd current/
+  428  ll
+  429  cd /home/
+  430  ll
+  431  cd Colombo
+  432  ll
+  433  cd current/
+  434  ll
+  435  cd apps/
+  436  ll
+  437  df -h
+  438  diff -qr ECPro_ichikawa ECPro
+  439  diff -qr ECPro_old ECPro
+  440  exit
+  441  cd /home/
+  442  ll
+  443  cd Colombo_p2/current/lib/
+  444  ll
+  445  pwd
+  446  ll
+  447  pwd
+  448  exit
+  449  smbd -V
+  450  sudo yum install -y samba
+  451  sudo systemctl enable smb nmb
+  452  sudo firewall-cmd --add-service=samba --permanent
+  453  sudo firewall-cmd --reload
+  454  sudo setsebool -P samba_enable_home_dirs on
+  455  sudo pdbedit -a aflonet
+  456  sudo systemctl restart smb nmb
+  457  sudo cp -p /etc/samba/smb.conf /etc/samba/smb.conf.org
+  458  vi /etc/samba/smb.conf
+  459  ll
+  460  cd /home/Colombo_p2/
+  461  ll
+  462  vi /etc/samba/smb.conf
+  463  sudo vi /etc/samba/smb.conf
+  464  exit
+  465  cd /home/Colombo_p2/
+  466  ll
+  467  cd /home/Colombo/shared/ECPro/tmp/logs
+  468  ll
+  469  cd /home/Colombo/
+  470  ll
+  471  /home/Colombo_p2/current/
+  472  ll
+  473  cd current/
+  474  ll
+  475  cd apps/
+  476  ll
+  477  cd ECPro
+  478  ll
+  479  cd tmp/
+  480  ll
+  481  cd logs/
+  482  ll
+  483  less dlog_20180115.txt
+  484  ll
+  485  cd /home/Colombo_p2/current/
+  486  ll
+  487  cd apps/
+  488  ll
+  489  cd ECR
+  490  cd ECProll
+  491  cd ECPro
+  492  ll
+  493  cd Config/
+  494  ll
+  495  grep -R "log" ./
+  496  grep -R "dlog" ./
+  497  ll /home/Colombo_p2/current/apps/ECPro/tmp/logs/
+  498  cd /home/Colombo_p2/current/apps/
+  499  grep -R "dlog" ./
+  500  exit
+  501  cd /home/Colombo_p2/current/apps/
+  502  ll
+  503  cd ECPro
+  504  ll
+  505  cd tmp/
+  506  ll
+  507  cd logs/
+  508  ll
+  509  less dlog_20180116.txt
+  510  exit
+  511  ll
+  512  cd
+  513  ll
+  514  cd .ssh/
+  515  ll
+  516  pwd
+  517  diff id_rsa id_rsa.pub
+  518  exit
+  519  cd /home/Colombo_p2/current/
+  520  ll
+  521  cd apps/
+  522  ll
+  523  cd ECPro
+  524  ll
+  525  git status
+  526  df 
+  527  df -H
+  528  pwd
+  529  ll
+  530  git pull git@gitlab.aflo.com:EC/Pro.git develop
+  531  git pull
+  532  git remote -v
+  533  cd ../
+  534  cd ECModel
+  535  ll
+  536  git pull
+  537  cd ../
+  538  ll
+  539  diff ECPro ECPro_ichikawa
+  540  diff -q ECPro ECPro_ichikawa
+  541  ll
+  542  diff -q ECProSourceTree ECPro
+  543  ll
+  544  diff ECProSourceTree/phpunit.xml  ECPro/phpunit.xml
+  545  diff -q ECProSourceTree ECPro
+  546  diff ECProSourceTree/composer.json ECPro/composer.json
+  547  git diff ECPro/
+  548  git diff ECPro
+  549  cd ECPro
+  550  git diff
+  551  git diff > /home/aflonet/diff.txt
+  552  less /home/aflonet/diff.txt 
+  553  ll
+  554  cd ../
+  555  ll
+  556  mv ECPro ECPro_bak
+  557  ll
+  558  ln -s ECProSourceTree ECPro
+  559  ll
+  560  ll ECProSourceTree/
+  561  cd ../
+  562  ll
+  563  unlink ./ECPro
+  564  ll
+  565  cd apps/
+  566  unlink ./ECPro
+  567  ll
+  568  mv ECPro_bak ECPro
+  569  ll
+  570  exit
+  571  python -V
+  572  hostname
+  573  which python
+  574  yum repolist all|egrep 'ius|epel'
+  575  yum install -y https://centos7.iuscommunity.org/ius-release.rpm
+  576  sudo yum install -y https://centos7.iuscommunity.org/ius-release.rpm
+  577  sudo yum search python36
+  578  sudo yum install -y python36u-devel python36u-pip
+  579  ll /usr/bin/py*
+  580  ln -s /usr/bin/python3.6 /usr/bin/python3
+  581  sudo ln -s /usr/bin/python3.6 /usr/bin/python3
+  582  sudo unlink /usr/bin/python
+  583  sudo ln -s /usr/bin/python3 /usr/bin/python
+  584  ll /usr/bin/pip*
+  585  ln -s /usr/bin/pip3.6 /usr/bin/pip
+  586  sudo ln -s /usr/bin/pip3.6 /usr/bin/pip
+  587  pip install beautifulsoup4
+  588  sudo pip install beautifulsoup4
+  589  sudo pip install lxml
+  590  cd /home/
+  591  ll
+  592  cd 
+  593  ll
+  594  pwd
+  595  ll
+  596  cd /home/Colombo_p2
+  597  ll
+  598  mkdir myapp
+  599  cd myapp/
+  600  ll
+  601  mkdir ScrapingApp
+  602  cd ScrapingApp/
+  603  ll
+  604  mkdir log
+  605  mv log logs
+  606  ll
+  607  python ScrapingApp.py 
+  608  nohup
+  609  nohup python ScrapingApp.py 
+  610  ll logs/
+  611  nohup python ScrapingApp.py &
+  612  top
+  613  ps aux | grep python
+  614  ll
+  615  cd logs/
+  616  ll
+  617  tail -f result_scraping_20180117-181527.txt
+  618  ll
+  619  cd../
+  620  cd ../
+  621  ll
+  622  tail -f nohup.out 
+  623  tail -f logs/result_scraping_20180117-181018.txt 
+  624  tail -f logs/result_scraping_20180117-181527.txt 
+  625  ll
+  626  tail -f nohup.out 
+  627  cd ../
+  628  ll
+  629  pwd
+  630  ll
+  631  cd ../current/
+  632  ll
+  633  cd apps/
+  634  ll
+  635  cd Account
+  636  git pull
+  637  ll
+  638  cd ../DamDao
+  639  git pull
+  640  cd ../DamModel
+  641  git pull
+  642  cd ../DamDao
+  643  git pull
+  644  cd ../ECModel
+  645  git pull
+  646  cd ../ECPro
+  647  git pull
+  648  git diff Config/DevelopmentConfig.php 
+  649  ll
+  650  cd ../../
+  651  ll
+  652  cd Li
+  653  cd lo
+  654  cd lib/
+  655  ll
+  656  git status
+  657  git pull
+  658  ll
+  659  pwd
+  660  ll
+  661  cd
+  662  ll
+  663  vi gitpull_all.sh
+  664  ll
+  665  mv /home/Colombo_p2/myapp/
+  666  mv /home/Colombo_p2/myapp/gitpull_all.sh
+  667  mv gitpull_all.sh /home/Colombo_p2/myapp/gitpull_all.sh
+  668  ll
+  669  pwd
+  670  cd /home/Colombo_p2/current/
+  671  ll
+  672  pwd
+  673  ll apps/
+  674  cd ../li
+  675  cd lib/
+  676  ll
+  677  pwd
+  678  cd ../../myapp/
+  679  ll
+  680  sh gitpull_all.sh 
+  681  pwd
+  682  ll
+  683  sh gitpull_all.sh 
+  684  ll
+  685  sh gitpull_all.sh 
+  686  ll
+  687  sh gitpull_all.sh 
+  688  cd
+  689  cd /home/Colombo_p2/myapp/ScrapingApp/
+  690  ll
+  691  tail -f nohup.out 
+  692  tail -f logs/result_scraping_20180117-181527.txt 
+  693  ll
+  694  tail -f nohup.out 
+  695  ll
+  696  less nohup.out 
+  697  less logs/result_scraping_20180117-181527.txt 
+  698  tail -f nohup.out 
+  699  exit
+  700  cd /home/Colombo_p2/current/apps/
+  701  ll
+  702  cd ECPro
+  703  ll
+  704  git status
+  705  git diff Config/DevelopmentConfig.php
+  706  cd ../../
+  707  ll
+  708  cd ../
+  709  ll
+  710  cd myapp/
+  711  ll
+  712  cd ScrapingApp/
+  713  ll
+  714  vi setting.json 
+  715  ll
+  716  mv nohup.out logs/nohup.out.20180117
+  717  history > history_20180117.txt
