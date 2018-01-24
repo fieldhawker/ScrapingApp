@@ -69,14 +69,19 @@ def main():
     # jsonファイルの読み込み
     # --------------------------
 
-    for url in dictionary['urls']:
+    urls= dictionary['urls']
+    urls_length = len(urls)
 
-        logger.info("## 走査するURL : " + url)
+    for i, url in enumerate(urls):
+
+        logger.info("## (" + str(i) + "/" + str(urls_length) + ") 走査するURL : " + url)
         o = urllib.parse.urlparse(url)
         if len(o.scheme) > 0:
             # html = urllib.request.urlopen(url).read()
+
             try:
                 response = urllib.request.urlopen(url)
+
             except urllib.error.HTTPError as e:
                 logger.info(e.reason)
                 url = url + ' : ' + str(e.code)
@@ -84,11 +89,14 @@ def main():
                 continue
 
             logger.info(response.getcode())
+            aceess_url = url
+            redirect_url = response.geturl()
             if url != response.geturl():
                 logger.info('redirect')
                 response = urllib.request.urlopen(response.geturl())
                 logger.info(str(response))
                 logger.info(response.geturl())
+                logger.info("## (" + str(i) + "/" + str(urls_length) + ") リダイレクト後のURL : " + response.geturl())
                 logger.info(response.getcode())
             html = response.read()
             url = url + ' : ' + str(response.getcode())

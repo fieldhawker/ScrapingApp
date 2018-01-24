@@ -1,0 +1,39 @@
+{
+  "target_url": "https://se-project.co.jp/",
+  "urls": [
+    "aaaaaaaaaaaaaaaaa"
+  ],
+  "ids": [
+  ],
+  "classes": [
+  ],
+  "attrs": [
+  ],
+  "tags": [
+    {
+      "tag": "header",
+      "attr": {
+        "class": "page_title"
+      }
+    }
+  ],
+  "export_format": "{url} - {word}",
+  "export_format_comment": [
+    "{url} - {id} - {word}",
+    "{word} - {id} - {url}",
+    "{word}",
+    "{id} - {word}"
+  ],
+  "sleep_second": 0.9,
+  "target_word": "点",
+  "book1": {
+    "title": "Python Developers",
+    "year": 2006,
+    "page": 650
+  },
+  "book2": {
+    "title": "Python Developers",
+    "year": 2006,
+    "page": 650
+  }
+}
