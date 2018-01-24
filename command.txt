@@ -1,0 +1,8 @@
+
+
+
+nohup python ScrapingApp.py &
+
+python‚ÌƒpƒX‚É‚æ‚Á‚Ä‚Ípython3‚É‚È‚é‚©‚à
+
+aaa
